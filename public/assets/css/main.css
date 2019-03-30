@@ -1,0 +1,1819 @@
+/*
+	Nucléus Technologies Blog Stylesheets
+	Author: Marc Enzo <github.com/enzomarc>
+	==================================== */
+
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../webfonts/Poppins.ttf");
+}
+
+* {
+    font-family: "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+p {
+    font-weight: normal;
+}
+
+html, body, header {
+    min-height: 100%;
+    height: auto;
+    color: #fff;
+}
+
+div.shadow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 0;
+}
+
+
+/* Menu */
+
+div.menu {
+    display: none;
+    overflow-y: auto;
+    transform: translateY(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #100007;
+    background-image: url('../img/menu_bg.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+div.menu.hidden {
+    display: block;
+    animation: hide_menu .5s both alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+div.menu.visible {
+    display: block;
+    animation: show_menu .5s both alternate cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+div.menu .eleven.content {
+    height: 100%;
+    width: 89%;
+}
+
+div.menu div.content div.column, header div.content div.columns {
+    height: 100%;
+}
+
+div.menu div.sidebar {
+    padding: 4.5% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+div.menu div.row.content {
+    height: 100%;
+}
+
+div.menu div.sidebar div.logo a img {
+    height: 32px;
+}
+
+div.menu div.sidebar div.caption a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+div.menu div.sidebar div.caption span {
+    font-size: 9px;
+    transform: rotate(270deg);
+    width: 7em;
+}
+
+div.menu div.sidebar div.caption hr {
+    margin-top: 100%;
+    height: 20px;
+    width: 0;
+    border: solid .5px #a3e7fc;
+}
+
+div.menu div.eleven.content {
+    padding: 4.5% 5% 4.5% 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.menu div.eleven.content div.row.close {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+}
+
+div.menu div.eleven.content div.row.close a img {
+    height: 22px;
+}
+
+div.menu div.eleven.content div.menu-content ul li {
+    list-style: none;
+    margin-bottom: 2em;
+}
+
+div.menu div.eleven.content div.menu-content ul.subitems {
+    display: none
+}
+
+div.menu div.eleven.content div.menu-content ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    opacity: .3;
+    transition: opacity .3s;
+}
+
+div.menu div.eleven.content div.menu-content li.selected ul.subitems li a {
+    opacity: .3;
+    transition: opacity .3s;
+    border: none;
+}
+
+div.menu div.eleven.content div.menu-content li.selected ul li a:hover {
+    opacity: 1;
+}
+
+div.menu div.eleven.content div.menu-content ul li a:hover {
+    opacity: 1;
+}
+
+div.menu div.eleven.content div.menu-content ul li.selected a {
+    color: #fff;
+    opacity: 1;
+    border-bottom: solid 2px #fff;
+    padding-bottom: 5px;
+}
+
+div.menu div.eleven.content div.menu-content ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: #fff;
+    -webkit-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+}
+
+div.menu div.eleven.content div.menu-content ul li a:hover::after {
+    width: 100%;
+}
+
+div.menu div.eleven.content div.menu-content ul li.selected a::after {
+    visibility: hidden;
+}
+
+div.menu div.eleven.content div.menu-content div.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 12px;
+    color: #fff;
+    line-height: 2em;
+    font-weight: 500;
+    padding-top: 9%;
+    align-items: flex-end;
+}
+
+div.menu div.eleven.content div.menu-content div.contact a {
+    text-decoration: none;
+    color: #fff;
+}
+
+div.menu div.eleven.content div.menu-content div.contact hr {
+    margin: 15% 0 0 0;
+    height: 50px;
+    width: 0;
+    border: solid 1px #a3e7fc;
+}
+
+
+/* Header */
+
+header {
+    background-image: url('../img/header_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    min-height: 100%;
+}
+
+*, header div {
+    z-index: 2;
+    position: relative;
+}
+
+header div.content {
+    height: 100%;
+}
+
+header div.row.content {
+    height: 100%;
+}
+
+header div.content div.column, header div.content div.columns {
+    height: 100%;
+}
+
+header div.sidebar {
+    border-right: solid 1px #888;
+    padding: 4.5% 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header div.sidebar div.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+header div.sidebar div.logo img {
+    height: 32px;
+}
+
+header div.sidebar div.slider-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header div.sidebar div.slider-buttons a {
+    display: contents;
+}
+
+header div.sidebar div.slider-buttons svg {
+    height: 25px;
+    margin: 15px 0;
+}
+
+header div.sidebar div.scroll a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+}
+
+header div.sidebar div.scroll span {
+    font-size: 9px;
+    transform: rotate(270deg);
+}
+
+header div.sidebar div.scroll img {
+    margin-top: 70%;
+    height: 20px;
+}
+
+.eleven.content {
+    width: 89%;
+}
+
+header div.content div.navbar {
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+header div.content div.navbar nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+header div.content div.navbar nav ul li {
+    margin: 0 4% 0 0;
+}
+
+header div.content div.navbar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins Medium", "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-size: 11px;
+    opacity: .5;
+    transition: opacity .3s;
+}
+
+header div.content div.navbar nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background-color: #fff;
+    -webkit-transition: all .2s ease-in-out 0s;
+    transition: all .2s ease-in-out 0s;
+}
+
+header div.content div.navbar nav ul li a:hover::after {
+    width: 100%;
+    visibility: visible;
+}
+
+header div.content div.navbar nav ul li.selected a {
+    color: #fff;
+    opacity: 1;
+    border-bottom: solid 2px #fff;
+    padding-bottom: 5px;
+}
+
+header div.content div.navbar nav ul li.selected a:hover::after {
+    width: 0;
+    visibility: hidden;
+}
+
+header div.content div.navbar nav ul li a:hover {
+    opacity: 1;
+}
+
+header div.content div.navbar div.menus {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header div.content div.navbar div.menus a {
+    display: inline-flex;
+}
+
+header div.content div.navbar div.menus a img {
+    height: 17px;
+}
+
+header div.content div.navbar div.menus a.menu-btn {
+    margin-left: 6%;
+    transition: all .3s;
+}
+
+header div.content div.navbar div.menus svg {
+    height: 7px;
+    width: 26px;
+}
+
+header div.content div.contents {
+    margin-bottom: 5%;
+}
+
+header div.content h1.title {
+    font-family: "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-size: 52px;
+    line-height: 1.4em;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+header div.content p.intro {
+    font-size: 11px;
+    opacity: .6;
+    line-height: 2em;
+    width: 75%;
+    font-family: "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-weight: normal;
+}
+
+button.cta {
+    background-color: transparent;
+    border: solid 1px #fff;
+    border-radius: 500px;
+    color: #fff;
+    padding: 10px 20px 10px 30px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+button.cta img {
+    height: 10px;
+    margin-left: 2em;
+}
+
+header div.content div.count {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 15%;
+}
+
+header div.content div.count h1 {
+    font-family: "Poppins SemiBold", "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-size: 52px;
+    line-height: 1.4em;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+}
+
+header div.content div.count h5 {
+    opacity: .5;
+    font-size: 16px;
+    margin: 3% 0 0 2%;
+}
+
+header div.content div.socials {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 20% 0 0 0;
+}
+
+header div.content div.socials a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Poppins Black", "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    margin: 0 0 20% 0;
+    transform: rotate(270deg);
+}
+
+header div.footer {
+    position: absolute;
+    bottom: 0;
+    width: 30%;
+    margin-bottom: 5%;
+}
+
+header div.content div.footer div.six {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header div.content div.footer div.six h6 {
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+header div.content div.footer div.six span {
+    font-size: 10px;
+    opacity: .6;
+    margin-bottom: 0;
+}
+
+header div.next-post {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45%;
+    height: 25%;
+    border-top-left-radius: 40px;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+header div.next-post div.content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+header div.next-post div.content div.description {
+    display: flex;
+    flex-direction: column;
+    padding: 22% 0 10% 15%;
+}
+
+header div.next-post div.content div.description h6 {
+    font-size: 13px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+header div.next-post div.content div.description span {
+    font-size: 10px;
+    margin-bottom: 0;
+    opacity: .5;
+}
+
+header div.next-post div.content a.play-button {
+    background-color: rgba(255, 255, 255, .2);
+    display: inline-table;
+    position: absolute;
+    right: -22%;
+    z-index: 2;
+    bottom: 29%;
+    padding: 24px 24px 20px 28px;
+    border-radius: 500px;
+}
+
+header div.next-post div.content a.play-button img {
+    height: 17px;
+}
+
+header div.next-post div.img {
+    z-index: 1;
+    background-image: url('../img/next_post_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    border-top-left-radius: 40px;
+}
+
+
+/* Intro */
+
+section.intro {
+    background-color: #fff;
+    color: #111;
+    padding: 15% 5%;
+}
+
+section.intro div.container {
+    background-image: url('../img/intro_bg.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 20%;
+    margin: 0 auto;
+}
+
+section.intro div.container div.content {
+    margin-top: 1.9%;
+}
+
+section.intro div.container h1 {
+    font-family: "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 2em;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+}
+
+section.intro div.container p {
+    opacity: .7;
+    font-size: 13px;
+    line-height: 2em;
+}
+
+section.intro div.container div.caption {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+section.intro div.container div.caption hr {
+    width: 10%;
+    margin: 0 0 0 5%;
+    border: solid 1px #000;
+}
+
+
+/* Posts */
+
+section.posts div.container {
+    width: 90%;
+    max-width: initial;
+}
+
+div.post {
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(135, 129, 129, .2);
+    color: #111;
+    border: solid 1px rgba(199, 188, 188, .5);
+    margin-top: 8%;
+}
+
+div.post div.img {
+    background-image: url(../img/post.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+div.post div.content {
+    padding: 8%;
+}
+
+div.post div.content a.similar_link {
+    text-decoration: none;
+    color: #1b1e21;
+}
+
+div.post div.content h6.post-title {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.9em;
+}
+
+div.post div.content p {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.9em;
+    opacity: .7;
+}
+
+div.post div.content span.footer span {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1.9em;
+    opacity: .7;
+}
+
+section.posts div.container div.load {
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section.posts div.container div.load button.load-btn {
+    background-color: transparent;
+    border: solid 1px #000;
+    border-radius: 500px;
+    color: #000;
+    padding: 10px 30px;
+    margin: 5% 0;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(135, 129, 129, .2);
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #100007;
+    padding: 7% 5% 5% 5%;
+}
+
+footer div.top {
+    margin-bottom: 12%;
+}
+
+footer div.three img {
+    height: 32px;
+}
+
+footer div.three h6 {
+    font-size: 11px;
+    opacity: .6;
+    font-weight: 500;
+}
+
+footer div.three div.socials a {
+    margin-right: 1em;
+}
+
+footer div.three a, footer div.three p {
+    text-decoration: none;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 2.2em;
+    margin-bottom: 0;
+}
+
+footer hr {
+    border: solid 1px #200116;
+    margin-bottom: 6rem;
+}
+
+footer div.bottom {
+    font-size: 10px;
+    opacity: .6;
+}
+
+footer div.bottom a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer div.bottom div.terms {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+footer div.bottom div.terms hr {
+    height: 10px;
+    width: 0;
+    border: solid 1.5px #200116;
+    background: #200116;
+    opacity: 1;
+}
+
+footer div.bottom div.terms * {
+    margin: 0 0 0 8%;
+}
+
+
+/* Alert */
+
+div.alert {
+    padding: 3rem;
+    font-size: 12px;
+    line-height: 2.5rem;
+}
+
+div.alert div.msg p {
+    margin: 0;
+}
+
+
+/* Post Page */
+
+.post_page {
+    background-color: #F7F7F9;
+    overflow-x: hidden;
+}
+
+.post_page header {
+    min-height: unset;
+    height: auto;
+    background-color: #F7F7F9;
+    width: 100%;
+    padding-top: 5rem;
+    color: #200116;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../img/post_bg.jpg');
+    background-attachment: fixed;
+}
+
+.post_page header div.container {
+    height: 100%;
+}
+
+.post_page header div.shadow {
+    height: 101%;
+    background: linear-gradient(to bottom, rgba(247, 247, 249, .2), rgba(247, 247, 249, 1));
+}
+
+.post_page div.author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post_page div.author img {
+    height: 55px;
+    width: 55px;
+    border-radius: 500px;
+    box-shadow: 0px 1px 3px 0px #655e5e8f;
+}
+
+.post_page div.author div.details {
+    margin-left: 1rem;
+}
+
+.post_page div.comment div.details {
+    margin-left: unset;
+}
+
+.post_page div.author div.details span.name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.post_page div.author div.details div.date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post_page div.author div.details div.date span {
+    font-size: 11px;
+}
+
+.post_page div.author div.details div.date hr {
+    border: solid 1px #000;
+    height: 8px;
+    margin: 0 5px;
+    opacity: .4;
+}
+
+.post_page div.close_post, .post_page div.round_btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.post_page div.round_btn span {
+    margin-right: 1rem;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.post_page div.close_post {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.post_page div.close_post a svg, .post_page div.round_btn a svg {
+    height: 50px;
+}
+
+.post_page div.close_post a svg .a,
+.post_page div.round_btn a svg .a,
+.post_page div.close_post a svg .b,
+.post_page div.round_btn a svg .b {
+    transition: all .3s;
+}
+
+.post_page div.close_post a svg:hover .a, .post_page div.round_btn a svg:hover .a {
+    fill: #200116;
+}
+
+.post_page div.close_post a svg:hover .b, .post_page div.round_btn a svg:hover .b {
+    stroke: #F7F7F9;
+}
+
+.post_page header div.title {
+    margin-top: 8%;
+}
+
+.post_page header div.title h1 {
+    height: auto;
+    min-width: 100%;
+    width: auto;
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 8rem;
+}
+
+.post_page header div.socials {
+    margin: 4% 0 0 0;
+    display: inline-flex;
+    width: 100%;
+}
+
+.post_page header div.socials div.likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post_page header div.socials div.count {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.post_page header div.socials div.count span {
+    color: #000;
+    opacity: .7;
+    font-size: 12px;
+}
+
+.post_page header div.socials div.count span.number {
+    opacity: 1;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.post_page a.social_btn {
+    text-decoration: none;
+    background-color: #F7F7F9;
+    border-radius: 1500px;
+    color: #200116;
+    padding: 14px;
+    box-shadow: 0px 1px 3px 0px #655e5e8f;
+    border: none;
+    font-weight: 900;
+    font-size: 13px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 10px;
+    width: 10px;
+}
+
+a.social_btn {
+    transition: all .3s;
+}
+
+a.social_btn:hover {
+    background-color: #200116;
+    color: #F7F7F9;
+}
+
+.post_page header div.socials div.network {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.post_page header div.socials div.network a {
+    margin-left: 2rem;
+}
+
+.post_page header div.description {
+    margin: 4% 0 8% 0;
+}
+
+.post_page header div.description p {
+    font-size: 1.8rem;
+    line-height: 4rem;
+}
+
+.post_page section.post_content {
+    margin-top: 8%;
+    height: auto;
+    color: #200116;
+}
+
+.post_page section.post_content div.container {
+    height: 100%;
+}
+
+.post_page section.post_content div.img, .post_page section.post_content img {
+    width: 100%;
+    height: 400px;
+    background-image: url('../img/postimg1.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.post_page section.post_content p {
+    margin: 3em 0;
+    font-size: 14px;
+    line-height: 2.5em;
+    text-align: justify;
+    font-weight: 500;
+}
+
+.post_page section.post_content h1 {
+    font-size: 40px;
+}
+
+.post_page section.similar {
+    margin-bottom: 8%;
+    color: #200116;
+}
+
+.post_page section div.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post_page section div.title h3 {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.post_page section div.title hr {
+    border: solid 1px #200116;
+    width: 50px;
+    margin: 0 0 0 2%;
+}
+
+.post_page section.comments {
+    color: #200116;
+    margin: 8% 0;
+}
+
+.post_page section.comments div.comment_form {
+    margin: 5% 0;
+}
+
+label {
+    font-size: 11px;
+    opacity: .6;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="tel"],
+form input[type="number"],
+form input,
+form textarea,
+form select {
+    border: solid 1px #E3E1E1;
+    box-shadow: 0 3px 6px rgba(181, 181, 181, .16);
+    border-radius: 0;
+    font-size: 12px;
+    padding: 2em;
+    line-height: 2.5rem;
+    width: 100%;
+}
+
+form textarea {
+    height: 200px;
+    min-height: 200px;
+    max-height: 300px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+form div.button_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+form div.button_row button {
+    color: #200116;
+    border: solid 1px #200116;
+}
+
+form#story_form input[type="text"],
+form#story_form input[type="email"],
+form#story_form input[type="password"],
+form#story_form input[type="tel"],
+form#story_form input[type="number"],
+form#story_form input,
+form#story_form textarea,
+form#story_form select {
+    padding: 5px 7px;
+    height: 1%;
+}
+
+form#story_form textarea {
+    height: 100px;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.post_page section.comments div.comments {
+    display: flex;
+    flex-direction: column;
+}
+
+.post_page section.comments div.comments div.comment {
+    background-color: #fff;
+    border: solid 1px #E3E1E1;
+    box-shadow: 0 3px 6px rgba(181, 181, 181, .16);
+    padding: 2em;
+    margin-bottom: 1em;
+}
+
+.post_page section.comments div.comments div.comment div.author img {
+    height: 40px;
+    width: 40px;
+}
+
+.post_page section.comments div.comments div.comment div.author span {
+    font-size: 9px;
+}
+
+.post_page section.comments div.comments div.comment div.author span.name {
+    font-size: 12px;
+}
+
+.post_page section.comments div.comments div.comment a.social_btn {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+}
+
+.post_page section.comments div.comments div.comment div.comment_details {
+    margin-bottom: 3rem;
+}
+
+.post_page section.comments div.comments div.comment div.comment_content {
+    font-size: 12px;
+    line-height: 2.5rem;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    background-color: #F7F7F9;
+    color: #200116;
+}
+
+.dashboard h4 {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Poppins Medium", "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+}
+
+.dashboard div.mobile_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #F7F7F9;
+    padding: 10% 2%;
+    display: none;
+}
+
+.dashboard div.mobile_menu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard div.mobile_menu ul li {
+    list-style: none;
+    margin-bottom: 3rem;
+}
+
+.dashboard div.mobile_menu ul li.close_menu {
+    margin-bottom: 8rem;
+}
+
+.dashboard div.mobile_menu ul li a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #200116;
+}
+
+.dashboard header {
+    background-color: #fff;
+    box-shadow: 0 3px 4px rgba(181, 181, 181, .16);
+    background-image: unset;
+    padding: 2% 0 0 0;
+    color: #200116;
+    margin-bottom: 6rem;
+}
+
+.dashboard div.navbar {
+    border-bottom: solid .5px rgba(112, 112, 112, .2);
+}
+
+.dashboard header a.menu_btn {
+    height: 8px;
+    display: none;
+}
+
+.dashboard header ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+.dashboard header ul li {
+    list-style: none;
+    margin-right: 4rem;
+}
+
+.dashboard header ul li.mobile_btn {
+    display: none;
+}
+
+.dashboard header ul li a {
+    text-decoration: none;
+    color: #200116;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.dashboard header ul li.selected a, .dashboard div.mobile_menu ul li.selected a {
+    color: #32908F;
+}
+
+.dashboard header ul li a img {
+    height: 32px;
+}
+
+.dashboard header div.intro {
+    margin: 2% 0 0 0;
+}
+
+.dashboard header div.intro div.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard header div.intro h4 {
+    margin-bottom: 1rem;
+}
+
+.dashboard header div.intro p {
+    font-size: 13px;
+    opacity: .6;
+    line-height: 2.5rem;
+}
+
+.dashboard section.stories {
+    margin-bottom: 8rem;
+}
+
+.dashboard section.stories div.title {
+    margin-bottom: 1rem;
+}
+
+.dashboard section.stories div.stories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dashboard div.editor {
+    margin-bottom: 5%;
+    box-shadow: 0 3px 6px rgba(181, 181, 181, .16);
+}
+
+.dashboard div.story_btn {
+    margin-bottom: 2%;
+}
+
+.dashboard div.story_btn ul li {
+    margin-right: 1rem;
+}
+
+.dashboard div.story_btn ul li a {
+    border: solid 1px #F7E7F9;
+    padding: 8px 10px;
+    font-size: 11px;
+    letter-spacing: normal;
+    transition: all .3s;
+}
+
+.dashboard div.story_btn ul li a:hover {
+    background-color: #32908F;
+    color: #fff;
+}
+
+.dashboard div.story_btn ul li.delete:hover a {
+    background-color: #FF5252;
+    color: #fff;
+}
+
+div.story {
+    display: flex;
+    flex-direction: column;
+    width: 27%;
+    background-color: #fff;
+    padding: 2% 3% 0 2%;
+    border-radius: 5px;
+    box-shadow: 0 3px 4px rgba(181, 181, 181, .16);
+    margin: 0 1% 2% 0;
+}
+
+div.story div.date span {
+    font-size: 11px;
+    opacity: .6;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.story div.date div.published span {
+    justify-content: flex-end;
+}
+
+div.story div.row {
+    margin-bottom: 2rem;
+}
+
+div.story div.title h5 {
+    font-size: 15px;
+    font-family: "Poppins Medium", "Poppins", "Muli", "Averta Standard", "Segoe UI", sans-serif;
+    margin: 0;
+}
+
+div.story div.description {
+    border-bottom: solid .5px rgba(112, 112, 112, .2);
+    height: 100%;
+}
+
+div.story div.description p {
+    font-size: 11px;
+    line-height: 2rem;
+}
+
+div.story div.post_button a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: #32908F;
+    font-size: 11px;
+    transition: all .3s;
+}
+
+div.story div.post_button a svg {
+    height: 10px;
+}
+
+div.story div.post_button a:hover {
+    color: #26C485;
+}
+
+div.story div.post_button a svg .a {
+    transition: all .3s;
+}
+
+div.story div.post_button a:hover svg .a {
+    stroke: #26C485;
+}
+
+div.story div.post_button a:hover svg {
+    animation: go_next .5s both infinite alternate cubic-bezier(0.88, -0.38, 0.38, 0.54);
+}
+
+/* Dashboard Settings */
+
+div.config {
+    background-color: #fff;
+    border: solid 1px #E3E1E1;
+    box-shadow: 0 3px 6px rgba(181, 181, 181, .16);
+    border-radius: 5px;
+    margin-bottom: 3rem;
+    color: #200116;
+}
+
+div.config div.config_title {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.config div.config_title span {
+    opacity: 0.6;
+    font-size: 10px;
+}
+
+div.config div.config_title hr {
+    border: solid .5px rgba(112, 112, 112, .06);
+    width: 100%;
+    margin: 0 0 0 1rem;
+    flex: 1;
+}
+
+div.config div.content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+div.config div.content form div.row {
+    width: 100%;
+}
+
+div.config div.content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+div.config div.content form input,
+div.config div.content form textarea {
+    box-shadow: none;
+    padding: 1em;
+    font-size: 11px;
+    letter-spacing: .8px;
+}
+
+div.config div.content.avatar img {
+    height: 128px;
+    width: 128px;
+    border-radius: 500px;
+}
+
+div.config div.config_save {
+    padding: 2rem;
+    border-top: solid .5px rgba(112, 112, 112, .2);
+}
+
+div.config div.config_save a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #32908F;
+    font-size: 11px;
+}
+
+div.config div.config_save a img {
+    height: 10px;
+}
+
+div.config div.config_save a:hover img {
+    animation: go_next .5s both infinite alternate cubic-bezier(0.88, -0.38, 0.38, 0.54);
+}
+
+
+/* Dashboard Login */
+
+.dashboard_login {
+    background-image: url('../img/login_bg.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.dashboard_login div.config {
+    width: 40%;
+}
+
+.dashboard_login div.config div.config_title span {
+    font-size: 12px;
+    opacity: 1;
+}
+
+.dashboard_login div.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+/* Animations */
+
+@keyframes boing {
+    from {
+        r: 9;
+    }
+    
+    to {
+        r: 16.5;
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: .3;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes go_down {
+    from {
+        transform: translateY(0);
+    }
+    
+    to {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes go_next {
+    from {
+        transform: translateX(-5px);
+    }
+    
+    to {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes show_menu {
+    from {
+        transform: translateY(-100%);
+    }
+    
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes hide_menu {
+    from {
+        transform: translateY(0);
+    }
+    
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes menu_slide {
+    from {
+        left: -200px;
+        opacity: 0;
+    }
+    
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+svg.selected g#slider_mark g.cls-2 {
+    animation: opacity .9s both infinite alternate cubic-bezier(0.88, -0.38, 0.38, 0.54);
+}
+
+svg.selected g#slider_mark g.cls-2 .cls-4 {
+    animation: boing .9s both infinite alternate cubic-bezier(0.88, -0.38, 0.38, 0.54);
+}
+
+div.slider-buttons a:hover svg g#slider_mark g.cls-2 {
+    animation: opacity .3s both alternate-reverse ease-in-out;
+}
+
+div.slider-buttons a:hover svg g#slider_mark g.cls-2 .cls-4 {
+    animation: boing .3s both alternate-reverse ease-in-out;
+}
+
+div.scroll a:hover img {
+    animation: go_down .5s both infinite alternate cubic-bezier(0.88, -0.38, 0.38, 0.54);
+}
+
+button.cta:hover img {
+    animation: go_next .5s both infinite alternate cubic-bezier(0.88, -0.38, 0.38, 0.54);
+}
+
+
+/* Responsive */
+
+@media screen and (max-width: 750px) {
+    
+    header {
+        height: auto;
+    }
+    
+    header div.sidebar div.logo img {
+        height: 25px;
+    }
+    
+    header div.footer {
+        display: none;
+    }
+    
+    header div.next-post {
+        width: 50%;
+    }
+    
+    div.menu div.sidebar div.logo a img {
+        height: 25px;
+    }
+    
+    div.menu div.eleven.content div.row.close a img {
+        height: 20px;
+    }
+    
+    section.intro div.container {
+        margin: 0 auto;
+        width: 95%;
+    }
+    
+    header div.content h1.title {
+        font-size: 34px;
+        margin-top: 20%;
+    }
+    
+    section.intro div.container h1 {
+        font-size: 22px;
+    }
+    
+    .post_page div.posts {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .post_page div.posts div.post {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .dashboard div.story {
+        width: 100%;
+        padding: 3% 3% 0 3%;
+    }
+    
+    .dashboard header ul {
+        display: none;
+    }
+    
+    .dashboard header a.menu_btn {
+        display: initial;
+    }
+    
+    .dashboard header a.menu_btn img {
+        height: 8px;
+        margin: 5% 0;
+    }
+    
+    .dashboard div.navbar {
+        margin-bottom: 5%;
+    }
+    
+}
+
+@media screen and (max-width: 670px) {
+    
+    .post_page header div.author img {
+        display: none;
+    }
+    
+    .dashboard_login div.config {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    
+    header div.sidebar div.logo img {
+        height: 20px;
+    }
+    
+    div.menu div.sidebar div.logo a img {
+        height: 20px;
+    }
+    
+    div.menu div.eleven.content div.row.close a img {
+        height: 16px;
+    }
+    
+    header div.next-post {
+        display: none;
+    }
+    
+    header div.count {
+        margin-top: 20%;
+    }
+    
+    .post_page header div.count {
+        margin-top: 0;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    
+    header div.content div.socials {
+        flex-direction: row;
+        margin: 5% 0;
+    }
+    
+    header div.content div.socials a {
+        transform: none;
+        margin: 0 2em 0 0;
+    }
+    
+    .post_page header {
+        padding: 0;
+        padding-top: 5rem;
+    }
+    
+    .post_page header div.post_nav, .post_page div.comment_details {
+        display: flex;
+    }
+    
+    header div.sidebar {
+        display: none;
+    }
+    
+    header {
+        padding: 5%;
+    }
+    
+    header div.content div.navbar div.menus {
+        width: 100%
+    }
+    
+    header div.content div.navbar div.menus a.menu-btn {
+        margin-left: 5%;
+    }
+    
+    header .navbar nav {
+        display: none;
+    }
+    
+    header div.eleven.content {
+        width: 100%;
+    }
+    
+    header div.content p.intro {
+        width: 100%;
+    }
+    
+    header div.content div.count {
+        padding-left: 0;
+        justify-content: flex-start;
+    }
+    
+    section.intro div.container :nth-child(1) {
+        margin-bottom: 1.2em;
+    }
+    
+    section.intro div.container div.six h1 {
+        font-size: 30px;
+    }
+    
+    section.intro {
+        background-size: 47%;
+    }
+    
+    section.posts div.container div.load button.load-btn {
+        margin: 5% 0 10% 0;
+    }
+    
+    footer div.top div.three {
+        width: 100%;
+    }
+    
+    footer div.top div.three {
+        margin: 4% 0;
+    }
+    
+    footer div.bottom div.six {
+        margin-bottom: 4%;
+    }
+    
+    footer div.bottom div.terms {
+        justify-content: flex-start;
+    }
+    
+    footer div.bottom div.terms * {
+        margin: 0 8% 0 0;
+    }
+    
+    section.intro div.container div.caption hr {
+        margin: 0 0 1.2em 5%;
+    }
+    
+    div.menu div.sidebar {
+        display: none;
+    }
+    
+    div.menu div.eleven.content {
+        width: 100%;
+        padding: 7%;
+    }
+    
+    div.menu div.eleven.content div.row.close {
+        margin-bottom: 10%;
+    }
+    
+    div.menu div.eleven.content div.menu-content div.contact {
+        display: none;
+    }
+    
+    div.menu div.eleven.content div.menu-content ul.subitems {
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    
+    .post_page header div.title h1 {
+        font-size: 32px;
+        line-height: 5rem;
+    }
+    
+    .post_page section.comments div.comments div.comment div.author img {
+        display: none;
+    }
+    
+    .post_page section.comments div.comments div.comment div.author div.details {
+        margin: 0;
+    }
+    
+}

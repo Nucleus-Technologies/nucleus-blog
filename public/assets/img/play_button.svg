@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="114" height="114" viewBox="0 0 114 114">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+      }
+    </style>
+  </defs>
+  <g id="play_button" transform="translate(-1502 -901)">
+    <circle id="Ellipse_5" data-name="Ellipse 5" class="cls-1" cx="57" cy="57" r="57" transform="translate(1502 901)"/>
+    <path id="play_icon" class="cls-2" d="M11768.889,1603.3v35.663l28.975-19.093Z" transform="translate(-10219.889 -663.298)"/>
+  </g>
+</svg>

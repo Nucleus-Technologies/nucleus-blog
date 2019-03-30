@@ -1,0 +1,14 @@
+<svg viewBox="0 0 36 36">
+  <defs>
+    <style>
+      .cls-1 {fill: #fff;}.cls-2, .cls-4 {fill: none;}.cls-2 {stroke: #fff;stroke-width: 3px;opacity: 0;}.cls-3 {stroke: none;}
+    </style>
+  </defs>
+  <g id="slider_mark" transform="translate(-32 -425)">
+    <circle id="Ellipse_2" data-name="Ellipse 2" class="cls-1" cx="4" cy="4" r="4" transform="translate(46 439)"/>
+    <g id="Ellipse_3" data-name="Ellipse 3" class="cls-2" transform="translate(32 425)">
+      <circle class="cls-3" cx="18" cy="18" r="18"/>
+      <circle class="cls-4" cx="18" cy="18" r="16.5"/>
+    </g>
+  </g>
+</svg>
